@@ -8,7 +8,7 @@ Yoyo商城
 JSP开发
 
 #### 使用说明
-Maven 3.6.1
+apache-maven-3.6.1-bin
 Tomcat 9.0.10
 mysql 8.0.32
 
