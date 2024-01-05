@@ -5,4 +5,10 @@ import com.lanou.yoyoshop.bean.Goods;
 
 public interface ICartService {
     boolean addToCart(Cart cart, Goods goods);
+
+    boolean lessenFromCart(Cart cart,Integer goodId);
 }
+
+
+
+

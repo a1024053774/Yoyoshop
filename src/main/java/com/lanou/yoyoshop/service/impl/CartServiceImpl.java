@@ -48,4 +48,25 @@ public class CartServiceImpl implements ICartService {
 
         return true;
     }
+
+    @Override
+    public boolean lessenFromCart(Cart cart, Integer goodId) {
+        List<Item> itemList = cart.getItemList();
+        for(Item item : itemList){
+            if(item.getGoodId().equals(goodId)){
+                item.setAmount(item.getAmount() - 1);
+                cart.setAmount(cart.getAmount() - 1);
+                cart.setTotal(cart.getTotal() - item.getPrice());
+                if(item.getAmount() == 0){
+                    itemList.remove(item);
+                }
+                break;
+            }
+        }
+        if(itemList.isEmpty()){
+            return true;
+        }
+            return false;
+
+    }
 }
