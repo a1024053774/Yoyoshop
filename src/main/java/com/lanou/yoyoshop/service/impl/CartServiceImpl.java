@@ -69,4 +69,21 @@ public class CartServiceImpl implements ICartService {
             return false;
 
     }
+
+    @Override
+    public boolean deleteFromCart(Cart cart, Integer goodId) {
+        List<Item> itemList = cart.getItemList();
+        for(Item item : itemList){
+            if(item.getGoodId().equals(goodId)){
+                itemList.remove(item);
+                cart.setAmount(cart.getAmount() - item.getAmount());
+                cart.setTotal(cart.getTotal() - item.getPrice() * item.getAmount());
+                break;
+            }
+        }
+        if(itemList.isEmpty()){
+            return true;
+        }
+        return false;
+    }
 }
