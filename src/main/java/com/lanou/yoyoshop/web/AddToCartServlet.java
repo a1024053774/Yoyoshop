@@ -50,7 +50,7 @@ public class AddToCartServlet extends HttpServlet {
         List<Item> itemList = new ArrayList<>();
         cart.setItemList(itemList);
         session.setAttribute("cart",cart);
-
+        obj = session.getAttribute("cart");
         }
         boolean result = cartService.addToCart((Cart)obj,goods);
         if(result){
