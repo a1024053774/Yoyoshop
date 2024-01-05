@@ -12,14 +12,8 @@ public class Cart {
     //存商品的购买项
     List<Item> itemList;
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "total=" + total +
-                ", amount=" + amount +
-                ", itemList=" + itemList +
-                '}';
-    }
+    //购物车的用户ID
+    private Integer userId;
 
     public Double getTotal() {
         return total;
@@ -43,5 +37,23 @@ public class Cart {
 
     public void setItemList(List<Item> itemList) {
         this.itemList = itemList;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "total=" + total +
+                ", amount=" + amount +
+                ", itemList=" + itemList +
+                ", userId=" + userId +
+                '}';
     }
 }

@@ -7,6 +7,8 @@ public class Item {
    private Integer goodId;
    private Integer orderId;
 
+   private Goods goods;
+
     public Integer getId() {
         return id;
     }
@@ -47,6 +49,14 @@ public class Item {
         this.orderId = orderId;
     }
 
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -55,6 +65,7 @@ public class Item {
                 ", amount=" + amount +
                 ", goodId=" + goodId +
                 ", orderId=" + orderId +
+                ", goods=" + goods +
                 '}';
     }
 }
